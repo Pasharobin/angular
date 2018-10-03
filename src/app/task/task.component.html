@@ -1,0 +1,11 @@
+<ul class="list-group">
+    <li 
+      class="list-group-item d-flex justify-content-between align-items-center" 
+      *ngFor="let task of tasks; let i = index"
+      (click)="onComplited(i)"
+    >
+      <h5 [ngClass]="{'check': task.complete}">{{ task.title }}</h5>
+      <span class="badge badge-primary badge-pill" *ngIf="!task.complete">{{ task.date | date: 'shortDate' }}</span>
+      <button mat-stroked-button color="warn" *ngIf="task.complete" (click)="onDelete(i)">Delete</button>
+    </li>
+  </ul>
