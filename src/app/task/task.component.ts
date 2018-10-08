@@ -17,7 +17,7 @@ export class TaskComponent implements OnInit {
     this.tasks = this.appService.tasks;
   }
 
-  onComplited(i: number) {
+  onCompleted(i: number) {
     this.appService.toggle(i);
   }
 
